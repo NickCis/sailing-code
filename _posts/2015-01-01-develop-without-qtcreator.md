@@ -8,9 +8,10 @@ categories: sailfishos qtcreator vim terminal
 
 ## Setting Up Enviroment
 
-Sailfish Os SDK (https://sailfishos.org/) and VirtualBox must be installed (TODO: this part is ommited)
+[Sailfish Os SDK](https://sailfishos.org/) and VirtualBox must be installed (TODO: this part is ommited)
 
-Links:
+Important Links:
+
 * [Developing with SailfishOS :: hardcodes](http://hardcodes.de/SailfishOS/Developing-with-SailfishOS.pdf)
 * [sailfish-qtcreator :: github](https://github.com/sailfish-sdk/sailfish-qtcreator)
 * [spectacle :: github](https://github.com/mer-tools/spectacle/)
@@ -18,27 +19,28 @@ Links:
 ### Starting Virtual machines
 
 Important Paths:
+
 * Sailfish SDK installation: `~/SailfishOs/`
 * Emulator: `~/SailfishOs/emulator`
 * mersdk: `~/SailfishOs/mersdk`
 * bin: `~/SailfishOs/bin`
 
-1. Loading virtual box kernel drivers
+1. Loading virtual box kernel drivers:
 
     sudo modprobe vboxdrv
 
-2. See if `MerSDK` and `SailfishOS Emulator` vms are listed
+2. See if `MerSDK` and `SailfishOS Emulator` vms are listed:
 
     [nickcis@myhost SailfishOS]$ VBoxManage list vms
     "MerSDK" {a1bb4124-9b62-4ee8-95d7-bedb468d7389}
     "SailfishOS Emulator" {6b1e1033-4b9f-49c4-92c1-15062b9cb860}
 
-2. (bis) If VMS arent listed registered
+**Note:** If VMS arent listed registered:
 
     VBoxManage registervm ~/SailfishOs/mersdk/MerSDK/MerSDK.vbox
     VBoxManage registervm ~/SailfishOs/emulator/SailfishOS Emulator/SailfishOS\ Emulator.vbox
 
-3. Start MerSDK VM
+3. Start MerSDK VM.
 
 Here you need to put the correct uuid of the `MerSDK` VM, you obtain it listing the VMS as explaind in 1
 
@@ -51,9 +53,9 @@ Here you need to put the correct uuid of the `MerSDK` VM, you obtain it listing 
     (C) 2008-2014 Oracle Corporation
     All rights reserved.
 
-4. Start SailfishOS Emulator
+4. Start SailfishOS Emulator.
 
-Here you need to put the correct uuid of the `SailfishOs Emulator` VM, you obtain it listing the VMS as explaind in 1
+Here you need to put the correct uuid of the `SailfishOs Emulator` VM, you obtain it listing the VMS as explaind in 1.
 
     [nickcis@myhost SailfishOS]$ VBoxManage list vms
     "MerSDK" {a1bb4124-9b62-4ee8-95d7-bedb468d7389}
@@ -63,7 +65,7 @@ Here you need to put the correct uuid of the `SailfishOs Emulator` VM, you obtai
     Waiting for VM "6b1e1033-4b9f-49c4-92c1-15062b9cb860" to power on...
     VM "6b1e1033-4b9f-49c4-92c1-15062b9cb860" has been successfully started.
 
-5. Check if the vms are running
+5. Check if the vms are running.
 
 The emulator should have display a window, but the mer sdk no. You can check if both vms are running:
 
@@ -87,12 +89,12 @@ Example:
 
 From ["How do I login into the emulator or build engine?"](https://sailfishos.org/develop-faq.html).
 
-* Connect to SDK
+* Connect to SDK.
 
     ssh -p 2222 -i ~/SailfishOS/vmshare/ssh/private_keys/engine/mersdk mersdk@localhost
     ssh -p 2222 -i ~/SailfishOS/vmshare/ssh/private_keys/engine/root root@localhost
 
-* Connect to Emulator
+* Connect to Emulator.
 
     ssh -p 2223 -i ~/SailfishOS/vmshare/ssh/private_keys/SailfishOS_Emulator/nemo nemo@localhost
     ssh -p 2223 -i ~/SailfishOS/vmshare/ssh/private_keys/SailfishOS_Emulator/root root@localhost
@@ -159,15 +161,16 @@ Possible `<command>`:
 
 
 #### Building custom app
-1. Qmake your project
 
-`~/SailfishOS/bin/merssh qmake -r -spec linux-g++`
+1. Qmake your project:
 
-2. Make your project
+    ~/SailfishOS/bin/merssh qmake -r -spec linux-g++
 
-`~/SailfishOS/bin/merssh make`
+2. Make your project:
 
-3. Deploy
+    ~/SailfishOS/bin/merssh make
+
+3. Deploy.
 
 **Note:** here you have to first start the SailfishOS emulator VM, set the `MER_SSH_DEVICE_NAME` enviromental variable to `"SailfishOS Emulator"` and then run the command
 
@@ -180,6 +183,7 @@ Other possible flags for `merssh deploy`:
 * `--zypper`:
 
 A simple script could be done in order to have all the enviromental variables setted:
+
     #! /usr/bin/bash
     
     export MER_SSH_TARGET_NAME=SailfishOS-i486
