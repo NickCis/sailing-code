@@ -1,0 +1,25 @@
+Name: sphinxbase
+Summary: Common library for sphinx speech recognition.
+Version: 0.8
+Release: 1
+Group: System/Libraries
+License: BSD
+URL: http://cmusphinx.sourceforge.net/
+Description: |
+    Common library for sphinx speech recognition.
+Sources:
+    - http://ufpr.dl.sourceforge.net/project/cmusphinx/%{name}/%{version}/%{name}-%{version}.tar.gz
+Builder: make
+Requires:
+    - bison
+PkgBR:
+    - libtool
+Configure: autogen
+ConfigOptions:
+    - --enable-fixed
+    - --prefix=/usr/
+Files:
+    - "%{_libdir}/libsphinx*"
+    - "%{_bindir}/sphinx*"
+AutoSubPackages:
+    - devel
