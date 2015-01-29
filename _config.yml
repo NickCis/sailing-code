@@ -31,7 +31,6 @@ flattr_button:
 
 # Build settings
 markdown:     kramdown
-  extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
 paginate:     3
 sass:
