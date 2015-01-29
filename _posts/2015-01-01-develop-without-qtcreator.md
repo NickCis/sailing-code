@@ -20,10 +20,10 @@ Important Links:
 
 Important Paths:
 
-* Sailfish SDK installation: `~/SailfishOs/`
-* Emulator: `~/SailfishOs/emulator`
-* mersdk: `~/SailfishOs/mersdk`
-* bin: `~/SailfishOs/bin`
+* Sailfish SDK installation: `~/SailfishOS/`
+* Emulator: `~/SailfishOS/emulator`
+* mersdk: `~/SailfishOS/mersdk`
+* bin: `~/SailfishOS/bin`
 
 1. Loading virtual box kernel drivers:
 
@@ -37,8 +37,8 @@ Important Paths:
 
 **Note:** If VMS arent listed registered:
 
-    VBoxManage registervm ~/SailfishOs/mersdk/MerSDK/MerSDK.vbox
-    VBoxManage registervm ~/SailfishOs/emulator/SailfishOS Emulator/SailfishOS\ Emulator.vbox
+    VBoxManage registervm ~/SailfishOS/mersdk/MerSDK/MerSDK.vbox
+    VBoxManage registervm ~/SailfishOS/emulator/SailfishOS Emulator/SailfishOS\ Emulator.vbox
 
 3. Start MerSDK VM.
 
@@ -55,7 +55,7 @@ Here you need to put the correct uuid of the `MerSDK` VM, you obtain it listing 
 
 4. Start SailfishOS Emulator.
 
-Here you need to put the correct uuid of the `SailfishOs Emulator` VM, you obtain it listing the VMS as explaind in 1.
+Here you need to put the correct uuid of the `SailfishOS Emulator` VM, you obtain it listing the VMS as explaind in 1.
 
     [nickcis@myhost SailfishOS]$ VBoxManage list vms
     "MerSDK" {a1bb4124-9b62-4ee8-95d7-bedb468d7389}
