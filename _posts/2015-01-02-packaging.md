@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Packaging a custom app or lib
-date:       2015-01-28 12:00:00
+date:       2015-01-02 12:00:00
 summary:    A brief description on how to package a custom application or library bare handed
 categories: sailfishos terminal sb2 rpm packaging
 ---

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Develop without QtCreator
-date:       2015-01-28 11:21:29
+date:       2015-01-01 12:00:00
 summary:    Trying to use Vim + Terminal, instead of the de facto QtCreator
 categories: sailfishos qtcreator vim terminal
 ---
