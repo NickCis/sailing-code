@@ -163,17 +163,21 @@ Possible `<command>`:
 #### Building custom app
 
 1. Qmake your project:
+
 `~/SailfishOS/bin/merssh qmake -r -spec linux-g++`
 
 2. Make your project:
+
 `~/SailfishOS/bin/merssh make`
 
 3. Deploy.
+
 `~/SailfishOS/bin/merssh deploy --sdk`
 
 **Note:** here you have to first start the SailfishOS emulator VM, set the `MER_SSH_DEVICE_NAME` enviromental variable to `"SailfishOS Emulator"` and then run the command
 
 Other possible flags for `merssh deploy`:
+
 * `--pkcon`: ?
 * `--rsync`: ?
 * `--sdk`: Deploy using RPM -> this option is the default when using qtcreator
