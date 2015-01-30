@@ -5,7 +5,7 @@ author:
   name: Nicolas Cisco
   url: http://nckweb.com.ar
 description: "A blog with experiences of developing with SailfishOS"
-baseurl:     "/sailing-code/"
+baseurl:     "/sailing-code"
 url: http://nckweb.com.ar/sailing-code
 
 # Google analytics
