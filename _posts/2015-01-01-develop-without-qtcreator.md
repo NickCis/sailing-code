@@ -3,7 +3,7 @@ layout:     post
 title:      Develop without QtCreator
 date:       2015-01-01 12:00:00
 summary:    Trying to use Vim + Terminal, instead of the de facto QtCreator
-categories: sailfishos qtcreator vim terminal
+tags: sailfishos qtcreator vim terminal
 ---
 
 ## Setting Up Enviroment
@@ -152,6 +152,7 @@ Example of variables:
     export MER_SSH_PRIVATE_KEY=~/SailfishOS/vmshare/ssh/private_keys/engine/mersdk
 
 Possible `<command>`:
+
 * `qmake`
 * `make`
 * `deploy`
@@ -162,26 +163,34 @@ Possible `<command>`:
 
 #### Building custom app
 
+Building an app involves 3 steps:
+
 1. Qmake your project:
+2. Make your project:
+3. Deploy.
+
+##### Qmake your project:
 
 `~/SailfishOS/bin/merssh qmake -r -spec linux-g++`
 
-2. Make your project:
+##### Make your project:
 
 `~/SailfishOS/bin/merssh make`
 
-3. Deploy.
+##### Deploy.
 
 `~/SailfishOS/bin/merssh deploy --sdk`
 
-**Note:** here you have to first start the SailfishOS emulator VM, set the `MER_SSH_DEVICE_NAME` enviromental variable to `"SailfishOS Emulator"` and then run the command
+**Note:** here you have to first start the SailfishOS emulator VM, set the `MER_SSH_DEVICE_NAME` enviromental variable to `"SailfishOS Emulator"` and then run the command.
 
 Other possible flags for `merssh deploy`:
 
 * `--pkcon`: ?
 * `--rsync`: ?
-* `--sdk`: Deploy using RPM -> this option is the default when using qtcreator
+* `--sdk`: Deploy using RPM (this option is the default when using qtcreator)
 * `--zypper`:
+
+##### Making a building easy
 
 A simple script could be done in order to have all the enviromental variables setted:
 
@@ -198,9 +207,13 @@ A simple script could be done in order to have all the enviromental variables se
     export MER_SSH_PORT=2222
     export MER_SSH_PRIVATE_KEY=~/SailfishOS/vmshare/ssh/private_keys/engine/mersdk
     export PATH=$PATH:~/SailfishOS/bin
+
+    alias build='merssh qmake && merssh make && merssh deploy --sdk'
     
     /usr/bin/bash
 
-This script will give you a bash terminal with all the enviromental variables setted and the `~/SailfishOS/bin` path exported to the `PATH`
+This script has to be runned on the project folder and it will give you a bash terminal with all the enviromental variables setted and the `~/SailfishOS/bin` path exported to the `PATH`. In addition, it will have the `build` alias which does the build workflow automatically.
+
+### Workflow example
 
 TODO: add a simple example
