@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "Packaging example: PocketSphinx"
+title:      Packaging PocketSphinx
 date:       2015-01-03 12:00:00
 summary:    An example of packaging using CMUS Pocket Sphinx
-categories: sailfishos terminal sb2 rpm packaging example pocketsphinx
+tags: sailfishos terminal sb2 rpm packaging example pocketsphinx
 ---
 
 ## Packaging PocketSphinx

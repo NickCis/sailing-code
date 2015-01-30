@@ -4,7 +4,7 @@ title:      Deploying python only apps
 date:       2015-01-30 12:00:00
 summary:    How i managed to deploy python only apps
 published:  false
-categories: sailfishos qml deploy packaging
+tags: sailfishos qml deploy packaging
 ---
 
 ## Deploy QML only apps
