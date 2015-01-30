@@ -10,4 +10,4 @@ Checkout the [Github repository](https://github.com/nickcis/sailing-code) to dow
 request a feature, report a bug, or contribute. It's free, and open source
 ([Creative Commons Attribution-NonCommercial- ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
 
-Using [Pixyll Jekyll theme](https://github.com/johnotander/pixyll)
+Using [Hyde Jekyll theme](http://hyde.getpoole.com/)
