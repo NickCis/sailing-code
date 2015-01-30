@@ -3,7 +3,8 @@ title:       Sailing Code
 email:       ncis20@gmail.com
 author:      Nicolas Cisco
 description: "A blog with experiences of developing with SailfishOS"
-baseurl:     "/sailing-code"
+baseurl:     "/sailing-code/"
+url: http://nckweb.com.ar/sailing-code
 
 # Google analytics
 google_analytics:
