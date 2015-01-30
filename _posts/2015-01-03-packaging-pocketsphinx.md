@@ -11,15 +11,17 @@ tags: sailfishos terminal sb2 rpm packaging example pocketsphinx
 First of all, the Mersdk must be set up and running.
 
 For having pocketsphinx running, we'll build 2 packages:
+
 * `sphinxbase`: with a `-devel` subpackage
 * `pocketsphinx`: with a `-devel` subpackage
 
+### Basic setup
 
-1. Connect to the mersdk:
+#### Connect to the mersdk:
 
     [nickcis@myhost ~]$ ssh -p 2222 -i ~/SailfishOS/vmshare/ssh/private_keys/engine/mersdk mersdk@localhost
 
-2. Install build dependecies.
+#### Install build dependecies.
 
 The build used are `autotools` (libtools package provides them)
 
@@ -63,10 +65,11 @@ The build used are `autotools` (libtools package provides them)
     Installing: libtool-2.4.2-1.1.1 ...................................................................................................................................................................................................................................[done]
 
 Then install all dependcies:
+
 * bison: `sb2 -t SailfishOS-armv7hl -m sdk-install -R zypper install bison`
 
 
-3. Set up build directory (optional)
+#### Set up build directory (optional)
 
 We'll create a sanbox folder, but it is something optional
 
@@ -75,7 +78,7 @@ We'll create a sanbox folder, but it is something optional
 
 ### Building SphinxBase
 
-1. Download the sources and uncompress
+#### Download the sources and uncompress
 
     [mersdk@SailfishSDK sandbox]$ curl "http://ufpr.dl.sourceforge.net/project/cmusphinx/sphinxbase/0.8/sphinxbase-0.8.tar.gz"" -o sphinxbase-0.8.tar.gz
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -84,7 +87,7 @@ We'll create a sanbox folder, but it is something optional
     [mersdk@SailfishSDK sandbox]$ tar xf sphinxbase-0.8.tar.gz
     [mersdk@SailfishSDK sandbox]$ cd sphinxbase-0.8
 
-2. Creating YAML file
+##### Creating YAML file
 
 The `.yaml` file use will be:
 
@@ -116,7 +119,7 @@ The `.yaml` file use will be:
 
 **Note:** In the `Files` section, as strings start with `%`, they have to be quoted
 
-3. Creating the `.spec` file
+#### Creating the `.spec` file
 
 To create the `.spec` file we'll use `specify`:
 
@@ -219,7 +222,7 @@ To this ones:
 **Note:** Files must be included between the `# >> files devel` tags, as they are custom editions of the spec file.
 
 
-4. Build and create RPM
+#### Build and create RPM
 
     [mersdk@SailfishSDK sphinxbase-0.8]$ mb2 -t SailfishOS-armv7hl -s sphinxbase.spec build
 
@@ -228,7 +231,7 @@ If everything goes right, you'll find a folder `RPMS` with the packages:
     [mersdk@SailfishSDK sphinxbase-0.8]$ ls RPMS/
     sphinxbase-0.8-1.armv7hl.rpm  sphinxbase-devel-0.8-1.armv7hl.rpm
 
-5. Install the package
+#### Install the package
 
 As `pocketsphinx depends of `sphinxbase`, it has to be installed.
 
@@ -265,13 +268,14 @@ As `pocketsphinx depends of `sphinxbase`, it has to be installed.
 ### Building PocketSphinx
 
 The process is very similar to the previous one.
-1. Download the sources and uncompress
+
+#### Download the sources and uncompress
 
     [mersdk@SailfishSDK sandbox]$ curl ""http://ufpr.dl.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz" -o pocketsphinx-0.8.tar.gz
     [mersdk@SailfishSDK sandbox]$ tar xf pocketsphinx-0.8.tar.gz
     [mersdk@SailfishSDK sandbox]$ cd pocketsphinx-0.8
 
-2. Creating YAML file
+#### Creating YAML file
 
     Name: pocketsphinx
     Summary: recognizer library written in C.
@@ -302,7 +306,7 @@ The process is very similar to the previous one.
     AutoSubPackages:
         - devel
 
-3. Creating the `.spec` file
+#### Creating the `.spec` file
 
     [mersdk@SailfishSDK pocketsphinx-0.8]$ specify pocketsphinx.
 
@@ -384,5 +388,6 @@ Edit the `files devel`. The final `.spec` file will be:
     # << files devel
 
 
-4. Build and create RPM
-5. Install the package
+#### Build and create RPM
+
+#### Install the package
