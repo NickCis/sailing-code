@@ -1,7 +1,9 @@
 # Site settings
 title:       Sailing Code
 email:       ncis20@gmail.com
-author:      Nicolas Cisco
+author:
+  name: Nicolas Cisco
+  url: http://nckweb.com.ar
 description: "A blog with experiences of developing with SailfishOS"
 baseurl:     "/sailing-code/"
 url: http://nckweb.com.ar/sailing-code
@@ -37,3 +39,7 @@ sass:
   compressed: true
 gems:
   - jekyll-sitemap
+
+# custom vars
+github:
+    repo:           https://github.com/nickcis/sailing-code
