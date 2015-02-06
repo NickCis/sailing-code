@@ -124,14 +124,14 @@ To run this tool, we need the MerSDK VM running. Remember that `merssh` only obj
     MER_SSH_PORT 
     MER_SSH_PRIVATE_KEY 
 
-`merssh` recives only one parameter `<command>`, and takes all the connection adn target parameters through enviromental variables. So, in order to run ir correctly, first, we'll need to set up all the enviroment.
+`merssh` recives only one parameter `<command>`, and takes all the connection and target parameters through enviromental variables. So, in order to run it correctly, first, you'll need to set up all the enviroment.
 
 Enviromental variables:
 
 * `MER_SSH_TARGET_NAME`: Name of the destination platform. It is the `-t` flag passed to `sb2` or `mb2`. If we log in to the mersdk vm, the command `sb2-config -l` will list the valid targets. Qtcreator uses `SailfishOS-i486` for the emulator and `SailfishOS-armv7hl` for the phone.
 * `MER_SSH_SHARED_HOME`: Path to the shared home, by default it is your home folder
 * `MER_SSH_SHARED_TARGET`: `mersdk/targets` folder inside the SailfishOS sdk folder
-* `MER_SSH_SHARED_SRC`: really do not know what it is, but, qtcreator sets it to your home folder
+* `MER_SSH_SHARED_SRC`: I really do not know what it is, but, qtcreator sets it to your home folder
 * `MER_SSH_SDK_TOOLS`: When installing, SailfishOS sdk creates a foder under `~/.config/SailfishBeta1/`, there you'll find a tools folder for each target. I don't known if merssh really uses this env var.
 * `MER_SSH_PROJECT_PATH`: The working project path
 * `MER_SSH_DEVICE_NAME`: I really do not what this argument really does, but is the `-d` flag passed to `sb2` or `mb2`. QtCreator uses `SailfishOS Emulator` for deploying to the emulator and leaves it blank for the phone, i'm not sure about this last thing.
@@ -139,7 +139,7 @@ Enviromental variables:
 * `MER_SSH_PORT`: ssh port of the mersdk
 * `MER_SSH_PRIVATE_KEY`: Path to the mersdk ssh private key
 
-**Note:** `sb2` is a tool used in the mersdk for cross compiling, for more information read [the packaging post]({{site.baseurl}}{% post_url 2015-01-02-packaging %}). As a summery, `sb2` or scratchbox is the tool to cross compile (it allows you to run commands in the crosscompiling enviroment).
+**Note:** `sb2` or scratchbox is a tool used in the mersdk for cross compiling (it allows you to run commands in the crosscompiling enviroment), for more information read [the packaging post]({{site.baseurl}}{% post_url 2015-01-02-packaging %}).
 
 Example of variables:
 
@@ -162,7 +162,7 @@ Possible `<command>`:
 * [`gcc`](https://github.com/sailfish-sdk/sailfish-qtcreator/blob/next/src/tools/merssh/gcccommand.cpp#L38): from what I understand of the code is doesn't work, one would suppose that it will execute `gcc` using `sb2`, but it doesn't.
 * [`rpm`](https://github.com/sailfish-sdk/sailfish-qtcreator/blob/next/src/tools/merssh/rpmcommand.cpp#L41): executes: `mb2 -p <project path> -t <target> rpm [additional parameters/flags]`. Runs the install & rpm-creation phases
 * [`generatesshkeys`](https://github.com/sailfish-sdk/sailfish-qtcreator/blob/next/src/tools/merssh/generatekeyscommand.cpp#L86): From what the name says it could be used to generate the ssh keys, but i didn't try to find out how to use it or what really does.
-* `rpmbuild`: this file `~/.config/SailfishBeta1/mer-sdk-tools/MerSDK/SailfishOS-i486/rpmbuild`, especially  if you read it's last line: `exec "/home/nickcis/SailfishOS/bin/merssh" rpmbuild ${ARGUMENTS}`, makes me believe in the existance of an `rpmbuild` command. But from [`merssh source code`](https://github.com/sailfish-sdk/sailfish-qtcreator/blob/next/src/tools/merssh/main.cpp#L91) you see that it doesn't, in addition, when you run `merssh rpmbuild` it gives you a `Command not found.` error. Although, I really do not known why this file exists, it would be nice to have it. Building the rpm for distribution involves running `mb2 build`, which is defined bassically is running the `rpmbuild` phase (I believe the name comes from there). As this command doesn't exist, in order to package the rpm for the phone you'll have to connect through ssh and execute mb2 as explained in [the packaging post]({{site.baseurl}}{% post_url 2015-01-02-packaging %}).
+* `rpmbuild`: this file `~/.config/SailfishBeta1/mer-sdk-tools/MerSDK/SailfishOS-i486/rpmbuild`, especially  if you read it's last line: `exec "/home/nickcis/SailfishOS/bin/merssh" rpmbuild ${ARGUMENTS}`, makes me believe in the existance of an `rpmbuild` command. But from [`merssh source code`](https://github.com/sailfish-sdk/sailfish-qtcreator/blob/next/src/tools/merssh/main.cpp#L91) you see that it doesn't. In addition, when you run `merssh rpmbuild` it gives you a `Command not found.` error. Although, I really do not known why this file exists, it would be nice to have it. Building the rpm for distribution involves running `mb2 build`, which runs the `rpmbuild` phase (I believe the name comes from there). As this command doesn't exist, in order to package the rpm for the phone you'll have to connect through ssh and execute mb2 as explained in [the packaging post]({{site.baseurl}}{% post_url 2015-01-02-packaging %}).
 
 
 `[additional parameters/flags]` are the additional arguments that we pass to `merssh`, this tool will pass them to the `<command>`.
@@ -249,7 +249,7 @@ This tools is a wrapper of `sb2` used by QtCreator in order to compile and build
 
 ### SDK Control center
 
-QtCreator has a SailfishOS tab in its UI that lets you access to the SDK Control center in order to configure and update it, manage targets and use the rpm validator. To access to this control center, you'll need the mersdk vm running. This vm creates a webserver on the port `8080` which serves the ui to configure to the control center. So, to use it, without running QtCreator, you simply have to open (http://localhost:8080/)[http://localhost:8080/] in any browser. I really do not know how to change that port.
+QtCreator has a SailfishOS tab in its UI that lets you access to the SDK Control center in order to configure and update it, manage targets and use the rpm validator. To access to this control center, you'll need the mersdk vm running. This vm creates a webserver on the port `8080` which serves the ui to configure to the control center. So, to use it, without running QtCreator, you simply have to open [http://localhost:8080/](http://localhost:8080/) in any browser. I really do not know how to change that port.
 
 #### Building custom app
 
