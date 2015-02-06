@@ -3,10 +3,10 @@ layout:     post
 title:      Packaging a custom app or lib
 date:       2015-01-02 12:00:00
 summary:    A brief description on how to package a custom application or library bare handed
-tags: sailfishos terminal sb2 rpm packaging
+tags: sailfishos terminal sb2 mb2 rpm packaging
 ---
 
-## Packaging
+In order to build an package as a rpm you'll need a `.spec` file. This file has the package depencencies (build and runtime), how the source has to be compiled and what files will be included. It also has metadata about the package. The `.spec` file can be generated from a `.yaml` one, which is easyer to understand and read.
 
 Useful links:
 
@@ -184,6 +184,7 @@ For further information: [mer wiki](https://wiki.merproject.org/wiki/Spectacle#C
 * `%{_infodir}`: `%{_prefix}/info`
 * `%{_mandir}`: `%{_prefix}/man`
 
+
 ### Building the package
 
 [Source](https://together.jolla.com/question/22379/porting-sdl-20-game-to-sailfish/#post-id-22493)
@@ -203,6 +204,7 @@ The `SailfishOS-armv7hl` target is used to build binaries for the device, the `S
     [mersdk@SailfishSDK ~]$ sb2 -t SailfishOS-armv7hl ...
 
 With `sb2-config -d SailfishOS-armv7hl` you can configure `SailfishOS-armv7hl` to be the default target. So you don't need to provide the `-t` option.
+
 
 #### Intalling dependencies
 
