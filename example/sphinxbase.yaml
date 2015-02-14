@@ -14,6 +14,7 @@ Requires:
     - bison
 PkgBR:
     - libtool
+    - bison
 Configure: autogen
 ConfigOptions:
     - --enable-fixed
@@ -23,3 +24,22 @@ Files:
     - "%{_bindir}/sphinx*"
 AutoSubPackages:
     - devel
+SubPackages:
+    - Name: python2
+      Summary: "Python2 support for pocketsphinx"
+      Description: |
+          This package provides python 2.7 bindings
+          for the speech recognition libary sphinx
+      Provides:
+        - '%{name}-python2'
+      Group: System/Libraries
+      Files: 
+        - "%{_libdir}/python2.7/site-packages/SphinxBase-0.8-py2.7.egg-info/PKG-INFO"
+        - "%{_libdir}/python2.7/site-packages/SphinxBase-0.8-py2.7.egg-info/SOURCES.txt"
+        - "%{_libdir}/python2.7/site-packages/SphinxBase-0.8-py2.7.egg-info/dependency_links.txt"
+        - "%{_libdir}/python2.7/site-packages/SphinxBase-0.8-py2.7.egg-info/top_level.txt"
+        - "%{_libdir}/python2.7/site-packages/sphinxbase.so"
+
+
+
+

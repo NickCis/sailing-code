@@ -71,7 +71,9 @@ For full description refer to this [link](https://wiki.merproject.org/wiki/Spect
   * `none`: No builder
 * `Files`: [list of strings] files to be included in the rpm
 * `PkgConfigBR`: [list of string] pkg-config building requires
-* `Requires`: [list of string] 
+* `PkgBR`: [list of string] packages required for building
+* `Requires`: [list of string] packages that are required for running
+* `SubPackages`: [list of dicts] [see mer wiki for required keywords for subpackages](https://wiki.merproject.org/wiki/Spectacle#Mandatory_and_valid_keywords_for_all_packages)
 
 **Note:** If a string starts with `%`, you'll have to quote or double quote it.
 
