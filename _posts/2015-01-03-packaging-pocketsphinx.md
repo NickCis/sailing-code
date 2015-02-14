@@ -136,6 +136,9 @@ The `.yaml` file use will be:
 
 **Note:** In the `Files` section, as strings start with `%`, they have to be quoted
 
+
+[Download sphinxbase.yaml]({{site.baseurl}}/example/sphinxbase.yaml)
+
 #### Creating the `.spec` file
 
 To create the `.spec` file we'll use `specify`:
@@ -260,8 +263,11 @@ To this ones:
 
 **Note:** Files must be included between the `# >> files devel` tags, as they are custom editions of the spec file.
 
+[Download sphinxbase.spec]({{site.baseurl}}/example/sphinxbase.spec)
 
 #### Build and create RPM
+
+This example is targeting the phone device, ie: `SailfishOS-armv7hl`. If you want to target the emulator you'll have to use `-t SailfishOS-i486`. For more information about targets read: [Develop without qt-creator]({{site.baseurl}}{% post_url 2015-01-01-develop-without-qtcreator %})
 
     [mersdk@SailfishSDK sphinxbase-0.8]$ mb2 -t SailfishOS-armv7hl -s sphinxbase.spec build
 
