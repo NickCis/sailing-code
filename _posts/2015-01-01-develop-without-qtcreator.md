@@ -300,12 +300,10 @@ A simple script could be done in order to have all the enviromental variables se
 
     alias build='merssh qmake && merssh make && merssh deploy --sdk'
     alias start-sdk='VBoxHeadless -startvm "MerSDK" & '
-    alias start-emulator='VBoxManage startvm ""SailfishOS Emulator"'
+    alias start-emulator='VBoxManage startvm "SailfishOS Emulator"'
     alias emu-run='ssh -p 2223 -i ~/SailfishOS/vmshare/ssh/private_keys/SailfishOS_Emulator/nemo nemo@localhost'
     
-    /usr/bin/bash
-
-This script has to be runned on the project folder and it will give you a bash terminal with all the enviromental variables setted and the `~/SailfishOS/bin` path exported to the `PATH`. In addition, it will have the `build` alias which does the build & deploy workflow automatically. Also, you'll have the `start-sdk` and `start-emulator` aliases in order to start the VMS.
+This script has to be sourced on the project folder and it will give you a bash terminal with all the enviromental variables setted and the `~/SailfishOS/bin` path exported to the `PATH`. In addition, it will have the `build` alias which does the build & deploy workflow automatically. Also, you'll have the `start-sdk` and `start-emulator` aliases in order to start the VMS.
 
 In order to run the application, you'll have to executed manually through ssh, for example:
 
