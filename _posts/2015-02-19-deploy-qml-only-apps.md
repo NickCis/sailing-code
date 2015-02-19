@@ -7,7 +7,8 @@ tags: sailfishos qml deploy packaging desktop pro prf
 ---
 
 Links:
-* [](https://together.jolla.com/question/59041/how-to-deploy-qtqml-application-without-sdk/#post-id-60298)
+
+* [How to deploy qtqml application without sdk | Together jolla](https://together.jolla.com/question/59041/how-to-deploy-qtqml-application-without-sdk/#post-id-60298)
 * [.desktop-Files | Harbour Faq](https://harbour.jolla.com/faq#4.1.0)
 * [Creating Project Files | qmake Manual](http://doc.qt.io/qt-5/qmake-project-files.html)
 * [Advanced usage | qmake Manual](http://doc.qt.io/qt-5/qmake-advanced-usage.html)
@@ -15,6 +16,7 @@ Links:
 ## App structure
 
 A basic qt project structure is like this:
+
     .
     ├── <app>.desktop
     ├── <app>.pro
@@ -48,6 +50,7 @@ A basic file will contain the followin directives:
 The `pro` file allows more directives and configuration that exceed the need of packaging a `qml` only app.
 
 Example:
+
     TARGET = test
     CONFIG += sailfishapp
     SOURCES += src/test.cpp
