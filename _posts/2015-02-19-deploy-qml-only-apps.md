@@ -45,7 +45,7 @@ A basic file will contain the followin directives:
 * `TARGET`: The name of the app, this will be the name of the binary. (Remember that if you are targeting harbour, you should follow [these naming rules](https://harbour.jolla.com/faq#Naming)
 * `CONFIG`: keep reading it is discussed later.
 * `SOURCES`: `*.cpp` sources [optional]
-* `OTHER_FILES`: [optionnal] other files included.
+* `OTHER_FILES`: [optionnal] other files included in the project. QtCreator uses it in order to recognise project files, if you don't use qtcreator, you can ignore this directive.
 
 The `pro` file allows more directives and configuration that exceed the need of packaging a `qml` only app.
 
