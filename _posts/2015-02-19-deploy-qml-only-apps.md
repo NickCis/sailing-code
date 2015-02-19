@@ -8,10 +8,10 @@ tags: sailfishos qml deploy packaging desktop pro prf
 
 Links:
 
-* [How to deploy qtqml application without sdk | Together jolla](https://together.jolla.com/question/59041/how-to-deploy-qtqml-application-without-sdk/#post-id-60298)
-* [.desktop-Files | Harbour Faq](https://harbour.jolla.com/faq#4.1.0)
-* [Creating Project Files | qmake Manual](http://doc.qt.io/qt-5/qmake-project-files.html)
-* [Advanced usage | qmake Manual](http://doc.qt.io/qt-5/qmake-advanced-usage.html)
+* [How to deploy qtqml application without sdk - Together jolla](https://together.jolla.com/question/59041/how-to-deploy-qtqml-application-without-sdk/#post-id-60298)
+* [.desktop-Files - Harbour Faq](https://harbour.jolla.com/faq#4.1.0)
+* [Creating Project Files - qmake Manual](http://doc.qt.io/qt-5/qmake-project-files.html)
+* [Advanced usage - qmake Manual](http://doc.qt.io/qt-5/qmake-advanced-usage.html)
 
 ## App structure
 
