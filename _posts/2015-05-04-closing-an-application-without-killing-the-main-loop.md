@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Closing an application without killing the main loop
-date:       2015-05-04 19:80:49
+date:       2015-05-04 19:08:49
 summary:    How to run the application main loop on the background and then resume it when the user open the app again.
 tags: sailfishos mainloop killing close
 ---
